@@ -31,7 +31,10 @@
             var hgApp = new hg.App(params);
 			
 			var dataReader = new hg.dataReader.TableReader();
-			dataReader.read(dojo.byId('table1'));
+			var timeline = dataReader.read(dojo.byId('table1')); //TODO: render graph
+			
+			alert(timeline);
+			console.log(timeline);
         });
     </script>
 </head>
