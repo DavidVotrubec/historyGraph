@@ -1,0 +1,179 @@
+﻿/*
+TODO: pouzivat .less
+*/
+
+
+body 
+{
+    font-family:Arial, Sans-Serif;
+}
+
+
+/*override default csss from mvc */
+#main
+{
+    padding: 20px;
+}
+
+
+/***********************************************************
+ General classes .. used everywhere
+***********************************************************/
+.clickable 
+{
+    cursor: pointer; cursor:hand;
+}
+
+.bold 
+{
+    font-weight: bold;
+}
+
+.hidden 
+{
+    display:none;
+}
+
+.cleaner 
+{
+    clear:both;
+}
+
+/***********************************************************
+ HistoryGraph classes 
+***********************************************************/
+
+.hgAppContainer 
+{
+    position:relative;
+}
+
+.graphContainer 
+{
+    clear:both;
+    width:100%;	
+    min-height:100px;
+}
+
+.timelinesControllerContainer 
+{
+    width: 130px;
+    float: left;
+    font-weight:bold;
+}
+
+.timelineController 
+{
+    border: 1px solid #888;
+    padding: 3px;
+    width: 110px;
+    height: 45px;
+    overflow:hidden;
+}
+
+.canvasContainer 
+{
+    width: 750px;
+    height: 250px; /* TODO: might be higher ... or declared in % */
+    float: right;    
+}
+
+.articleContainer 
+{
+    clear:both;
+    margin-top: 15px;
+    border: 1px solid gray; /*TODO: @defaultBorderColor*/
+    min-height: 200px;
+    width: 100%;
+    xpadding: 10px;
+}
+
+.canvasContainer svg, .canvasContainer div
+{
+    background-color: #99E5FD;
+}
+
+.dijitColorPalette .dijitPaletteCell 
+{
+    height: 18px;
+    width: 18px;
+    padding:0px;
+    margin:0px;
+}
+
+.dijitColorPalette .dijitPaletteImg 
+{
+    height: 12px;
+    width: 13px;
+}
+
+.actionBox 
+{
+    position:relative;
+    width: 100%;
+    height: 30px;
+}
+
+.actionBox > div 
+{
+    float: left;
+}
+
+.button 
+{
+    /*TODO: less: inherit clickable*/
+    min-width: 50px;
+    display: inline-block;
+    padding: 2px 8px;    
+    text-align:center;
+    font-weight:bold;
+    font-size:1.1em;
+    border: 1px solid #333;
+    background-color: #ddd;
+}
+
+.collapsed * {
+    display:none;
+}
+
+/*TODO:*/
+.legendContainer 
+{
+    width: 202px;
+    margin-top: 2px; /*TODO: napozicovat nekam jinam... mozna i draggable??*/    
+    opacity:0.7;
+}
+
+.legendBox 
+{
+    border: 1px solid #333;
+    background-color: White;
+    width: 200px;
+}
+
+
+.dijitMenu .title 
+{
+    width:100%;
+    text-align:center;
+    font-weight:bold;
+    font-size:1.1em;
+    padding: 2px 0px;
+    border-bottom: 1px solid #333;
+    background-color: #ddd;
+}
+
+.dijitMenu .color 
+{
+    display: inline-block;
+    width: 12px;
+    height: 11px;
+    border: 1px solid #000;    
+    margin: 0px 2px 1px 0px;
+}
+
+.dijitMenu .getMore 
+{
+    border-top: 1px solid black;
+    padding-top: 3px;
+}

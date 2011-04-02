@@ -1,0 +1,105 @@
+﻿<!--
+TODO:
+Toto bude template na editacni formular
+nekde v nem bude tlacitko Save
+na nej se musi navazat callback ktery se zavola pri jeho clicknuti
+
+
+-->
+
+<div id="timelineEditDialog" dojoType="dijit.Dialog" title="{resources.dialogTitle}">
+<form action="#"> 
+        <div style="width:50%; float:left;">
+            <label for="_name">{resources.name}: </label>
+            <br />
+            <input style="width:97%;" name="name" id="Text1" value="{data.name}"/>
+            <br />
+            <label for="description">{resources.description}: </label>
+            <textarea style="width:97%; min-height: 130px;" dojoType="dijit.form.SimpleTextarea" name="description" id="Textarea1">{data.desc}</textarea>        
+        </div>
+
+        <div style="width:48%; float:right;">
+            <label for="color">{resources.color}: </label>
+            <br />
+            <input name="color" id="color" value="{data.color}"/>
+            <br />
+            <div dojoType="dijit.ColorPalette" onChange="dojo.byId('color').value=this.value"></div>
+        </div>
+
+        <div class="cleaner"></div>
+        
+        <button type="submit" dojoType="dijit.form.Button" class="btnSave">{resources.save}</button>
+
+        <button type="reset" dojoType="dijit.form.Button" class="btnReset">{resources.reset}</button>
+
+        <button dojoType="dijit.form.Button">
+            Click me
+            <script type="dojo.method" event="onClick">
+                alert('i was clicked');
+            </script>
+        </button>
+    </form>
+</div>
+
+<!--
+<div id="dialogOne" dojoType="dijit.Dialog" title="My Dialog Title">
+    <div dojoType="dijit.layout.TabContainer" style="width: 200px; height: 300px;">
+        <div dojoType="dijit.layout.ContentPane" title="foo">
+            Content of Tab "foo"
+        </div>
+        <div dojoType="dijit.layout.ContentPane" title="boo">
+            Hi, I'm Tab "boo"
+        </div>
+    </div>
+</div>
+
+
+<p>
+    When pressing this button the dialog will popup:
+</p>
+<button id="buttonOne" dojoType="dijit.form.Button" type="button">
+    Show me!
+    <script type="dojo/method" event="onClick" args="evt">
+        // Show the Dialog:
+        dijit.byId("dialogOne").show();
+    </script>
+</button>
+
+
+<!--
+<div>
+    <form action="#"> 
+
+        <div style="width:50%; float:left;">
+            <label for="_name">{resources.name}: </label>
+            <br />
+            <input style="width:97%;" name="name" id="Text1" value="{data.name}"/>
+            <br />
+            <label for="description">{resources.description}: </label>
+            <textarea style="width:97%; min-height: 130px;" dojoType="dijit.form.SimpleTextarea" name="description" id="Textarea1">{data.desc}</textarea>        
+        </div>
+
+        <div style="width:48%; float:right;">
+            <label for="color">{resources.color}: </label>
+            <br />
+            <input name="color" id="color" value="{data.color}"/>
+            <br />
+            <div dojoType="dijit.ColorPalette" onChange="dojo.byId('color').value=this.value"></div>
+        </div>
+
+        <div class="cleaner"></div>
+        
+        <button type="submit" dojoType="dijit.form.Button" class="btnSave">{resources.save}</button>
+
+        <button type="reset" dojoType="dijit.form.Button" class="btnReset">{resources.reset}</button>
+
+        <button dojoType="dijit.form.Button">
+            Click me
+            <script type="dojo.method" event="onClick">
+                alert('i was clicked');
+            </script>
+        </button>
+    </form>
+</div>
+
+-->

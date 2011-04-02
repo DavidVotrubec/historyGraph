@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>History Graph 0.1</title>
+    </head>
+    <link href="./lib/HistoryGraph.css" rel="stylesheet" type="text/css" />
+
+    <link href="./lib/dijit/themes/claro/claro.css" rel="stylesheet" type="text/css" />
+
+    <!-- TODO: asi by melo byt nacitano odjinud nebo jinak .. stejne jako widget samotny..-->
+    <link href="./lib/historyGraph/styles/hg.css" rel="stylesheet" type="text/css" />
+
+    <script src="./lib/dojo/dojo.js"></script>
+
+    <script>
+        dojo.registerModulePath('hg', '../../lib/historyGraph');
+        dojo.registerModulePath('raphaeljs', '../../lib/raphaeljs');
+        dojo.registerModulePath('thirdparty', '../../lib/thirdparty');
+
+        dojo.require('hg.App');
+		
+		dojo.require('hg.dataReader.TableReader');
+
+        dojo.addOnLoad(function () {
+            var params = {
+                pageContentNode: dojo.byId('hgMain'),
+                appName: 'HistoryGraph',
+                url: '/data' /*TODO: odkazuje na statick yadresar pro css ! */
+            };
+            var hgApp = new hg.App(params);
+			
+			var dataReader = new hg.dataReader.TableReader();
+			dataReader.read(dojo.byId('table1'));
+        });
+    </script>
+</head>
+
+<body class="claro">
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>History Graph Demo</h1>
+            </div>            
+        </div>
+
+        <div id="main">
+                  <div id="hgMain">Tady se vyrenderuje graf. <br />Pokud vidite tento text, neco se pokazilo...</div>
+				            
+            <div id="footer"></div>
+        </div>
+		
+		
+		<div id="tables">
+			<table id="table1">
+				<caption>Test data 1</caption>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Title</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1.1.1890</td>
+						<td>Something awfull</td>
+						<td>This is really akward...</td>
+					</tr>
+					<tr>
+						<td>2.1.1890</td>
+						<td>Something more awfull</td>
+						<td>This is really really akward...</td>
+					</tr>
+				</tbody>
+			</table>			
+		</div>
+    </div>
+</body>
+</html>
