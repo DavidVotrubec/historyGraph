@@ -26,15 +26,17 @@
             var params = {
                 pageContentNode: dojo.byId('hgMain'),
                 appName: 'HistoryGraph',
-                url: '/data' /*TODO: odkazuje na statick yadresar pro css ! */
+                url: '/data'
+				
+				//TODO: DataSource -> use TableReader
             };
             var hgApp = new hg.App(params);
 			
 			var dataReader = new hg.dataReader.TableReader();
-			var timeline = dataReader.read(dojo.byId('table1')); //TODO: render graph
-			
-			alert(timeline);
-			console.log(timeline);
+			var timelines = dataReader.read(dojo.byId('tables')); //TODO: render graph
+
+			//alert(timeline);
+			console.log(timelines);
         });
     </script>
 </head>
@@ -74,6 +76,34 @@
 						<td>2.1.1890</td>
 						<td>Something more awfull</td>
 						<td>This is really really akward...</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<table id="table1">
+				<caption>Another test data</caption>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Title</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1.1.1891</td>
+						<td>Something beautiful</td>
+						<td>And very sexy indeed...</td>
+					</tr>
+					<tr>
+						<td>15.6.1895</td>
+						<td>This world is the best one</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>15.7.1896</td>
+						<td>5 ways to skin the cat</td>
+						<td>ble ble ble</td>
 					</tr>
 				</tbody>
 			</table>			
